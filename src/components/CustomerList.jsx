@@ -1,5 +1,5 @@
 
-import { ArrowDownUp, Filter, MoveLeft, Search, X } from 'lucide-react'
+import { ArrowDownUp, Filter, MoveLeft, MoveRight, Search, X } from 'lucide-react'
 import customer from '../Array/customer'
 import Overview from './Overview'
 import { useState } from 'react'
@@ -121,7 +121,7 @@ const CustomerList = () => {
           </div>
 
           <div className='flex gap-2 mt-4' >
-            <button className='flex gap-2' onClick={() => setIsCurrentPage(isCurrentPage - 1)} disabled={isCurrentPage === 1}>
+            <button className='flex gap-2 border rounded-lg w-28 px-3 ' onClick={() => setIsCurrentPage(isCurrentPage - 1)} disabled={isCurrentPage === 1}>
               <MoveLeft className='w-3' />
               Previous
             </button>
@@ -131,8 +131,9 @@ const CustomerList = () => {
               })
             }
 
-            <button className='border rounded-lg h-6 w-14' onClick={() => setIsCurrentPage(isCurrentPage + 1)} disabled={isCurrentPage === totalPages}>
+            <button className='border rounded-lg h-6 w-20 flex gap-2 px-3' onClick={() => setIsCurrentPage(isCurrentPage + 1)} disabled={isCurrentPage === totalPages}>
               Next
+              <MoveRight className='w-3'/>
             </button>
           </div>
         </div>
